@@ -52,6 +52,12 @@ class SeatAllocationController extends Controller
             'user_id' => $request->user_id,
             'number_of_seats' => $request->number_of_seats
         ]);
-        return redirect()->route('dashboard')->with('success', 'Seat Allocation created successfully');
+        return redirect()->route('dashboard')->with('success', 'Ticket purchased successfully');
+    }
+
+    public function destroy(SeatAllocation $seatAllocation)
+    {
+        $seatAllocation->delete();
+        return redirect()->back()->with('success', 'Ticket cancelled successfully');
     }
 }

@@ -56,4 +56,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('tickets', [SeatAllocationController::class, 'store'])->name('tickets.store');
     Route::get('show', [SeatAllocationController::class, 'show'])->name('tickets.show');
     Route::get('/tickets', [SeatAllocationController::class, 'index'])->name('tickets.index');
+    Route::delete('/tickets/{seatAllocation}', [SeatAllocationController::class, 'destroy'])->name('tickets.destroy');
 });
